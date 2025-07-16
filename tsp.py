@@ -1,3 +1,4 @@
+# creating the tsp nearest neighbor function
 def tsp_nearest_neighbor(start_index, distance_matrix, delivery_indices, speed_mph=18):
     route = [start_index]
     unvisited = set(delivery_indices)

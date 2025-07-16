@@ -1,7 +1,7 @@
 import datetime
-
+# creating the Truck class
 class Truck:
-    def __init__(self, truck_id, capacity=60, speed=18):
+    def __init__(self, truck_id, capacity=16, speed=18):
         self.truck_id = truck_id
         self.capacity = capacity
         self.speed = speed
@@ -34,6 +34,10 @@ class Truck:
         self.current_location = self.route[0]
         self.current_time = self.start_time
 
+        for pkg in self.packages:
+            pkg.departure_time = self.start_time
+            pkg.status = "En Route"
+
         pending_packages = self.packages.copy()
         visited_stops = set([self.current_location])
 
@@ -50,7 +54,6 @@ class Truck:
                 delivery_indices = set([self.current_location])
                 for pkg in pending_packages:
                     delivery_indices.add(address_to_index[pkg.address])
-
                 self.route, _, _ = tsp_nearest_neighbor(self.current_location, distance_matrix, list(delivery_indices))
                 print(f"Rerouted at {self.current_time}. New route: {self.route}")
 
@@ -85,10 +88,9 @@ class Truck:
                 print(f"Delivered package {pkg.ID} at address: {pkg.address} at {self.current_time}")
 
             print(
-                f"Arrived at location {next_stop}, distance traveled: {self.total_distance:.2f} miles, total time: {self.total_time:.2f} hours"
-            )
+                f"Arrived at location {next_stop}, distance traveled: {self.total_distance:.2f} miles, total time: {self.total_time:.2f} hours")
 
-        print(f"Delivery complete for Truck {self.truck_id}", f"at {self.current_time}")
+        print(f"Delivery complete for Truck {self.truck_id} at {self.current_time}")
 
         if return_to_hub and self.current_location != 0:
             distance_back = float(distance_matrix[self.current_location][0])

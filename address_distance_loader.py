@@ -1,5 +1,6 @@
 import csv
 
+# Loads distances into matrix for future use
 def load_address_data(filename):
     address_to_index = {}
     with open(filename, mode='r') as file:

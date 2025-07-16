@@ -1,3 +1,4 @@
+# making the hashmap
 class HashMap:
     def __init__(self, size=40):
         self.table = [[] for _ in range(size)]
