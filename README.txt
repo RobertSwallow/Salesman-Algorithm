@@ -27,7 +27,7 @@ This project was developed as part of the **Western Governors University (WGU) C
 
 ```
 
-C950\_Project/
+Salesman-Algorithm\_Project/
 ├── main.py                 # Main driver script
 ├── truck.py                # Truck class and routing logic
 ├── hash\_table.py           # Custom hash table implementation
