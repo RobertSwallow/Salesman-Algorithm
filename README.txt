@@ -1,5 +1,4 @@
-```markdown
-# 📦 C950 - WGUPS Truck Routing Program
+## 📦 C950 - WGUPS Truck Routing Program
 
 This project was developed as part of the **Western Governors University (WGU) C950 - Data Structures and Algorithms** course. It simulates a real-world delivery scenario for the **Western Governors University Parcel Service (WGUPS)**, optimizing package delivery routes using a **Greedy Algorithm** and a custom-built **hash table**.
 
